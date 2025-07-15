@@ -1,0 +1,108 @@
+.cohort-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .hero-section {
+    background: #009cf7;
+    color: white;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-accent {
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: #EEC759;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .cohort-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  
+  .cohort-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #009cf7;
+    margin-bottom: 3rem;
+  }
+  
+  .cohort-footer {
+    background: #009cf7;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+  }
+  
+  .cohort-footer p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button Styles */
+  .cta-button {
+    background: #EEC759;
+    color: #333;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(238, 199, 89, 0.3);
+  }
+  
+  .cta-button:hover {
+    background: #ffd86e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(238, 199, 89, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+    
+    .cohort-section h2 {
+      font-size: 2rem;
+    }
+    
+    .cohort-footer p {
+      font-size: 1.4rem;
+    }
+  }
