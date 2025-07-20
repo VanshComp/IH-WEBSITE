@@ -1,0 +1,201 @@
+.alumni-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.alumni-hero {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bubbles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float-bubble 8s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 70px;
+  height: 70px;
+  left: 80%;
+  animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+@keyframes float-bubble {
+  0%, 100% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+.alumni-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.alumni-content {
+  padding: 6rem 0;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.alumni-stats {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .alumni-hero {
+    padding: 4rem 0;
+  }
+  
+  .alumni-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .alumni-content {
+    padding: 4rem 0;
+  }
+  
+  .alumni-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 15px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
+  }
+  
+  .stat-item h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .alumni-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+  
+  .stat-item p {
+    font-size: 1rem;
+  }
+}
