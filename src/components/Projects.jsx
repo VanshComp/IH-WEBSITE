@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useMemo, useCallback } from 'react';
-import { throttle } from 'lodash';
-import './Projects.css'; // Import the new dedicated stylesheet
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Projects.css';
 
 // --- Data Layer ---
 const projectData = [
@@ -22,115 +22,78 @@ const projectData = [
 
 const PLACEHOLDER_IMAGE = 'https://via.placeholder.com/400x240/232526/FFFFFF?text=Image+Not+Found';
 
-// --- Optimized Background Component ---
-const OptimizedBackground = React.memo(() => (
-    <div className="optimized-background-container" aria-hidden="true">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="grid-overlay"></div>
+// --- Animated Bubbles Background Component (Pure CSS) ---
+const BubblesBackground = React.memo(() => (
+    <div className="bubbles-background" aria-hidden="true">
+        {Array.from({ length: 15 }).map((_, i) => (
+            <div key={i} className="bubble"></div>
+        ))}
     </div>
 ));
 
-// --- Presentation Components ---
-const ProjectItem = React.memo(({ project, index }) => {
-  const isLeft = project.id % 2 !== 0;
+// --- Project Card Component using Framer Motion ---
+const ProjectCard = ({ project, index }) => {
+    const isLeft = index % 2 === 0;
 
-  return (
-    <div
-      className={`timeline-item ${isLeft ? 'left' : 'right'}`}
-      style={{ '--i': index }}
-    >
-      <div className="project-card-container">
-        <div className={`project-card ${project.color}`}>
-          <div className="project-image">
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              width="400"
-              height="240"
-              onError={(e) => { e.target.src = PLACEHOLDER_IMAGE; }}
-            />
-          </div>
-          <div className="project-info">
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <div className="project-technologies">
-              {project.technologies.map((tech) => (
-                <span key={tech} className="tech-tag">{tech}</span>
-              ))}
+    const cardVariants = {
+        hidden: { opacity: 0, x: isLeft ? -100 : 100, scale: 0.95 },
+        visible: { 
+            opacity: 1, 
+            x: 0,
+            scale: 1,
+            transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } 
+        }
+    };
+
+    return (
+        <motion.div
+            className={`timeline-item ${isLeft ? 'left' : 'right'}`}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+        >
+            <div className="project-card">
+                <div className="project-image">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        onError={(e) => { e.target.src = PLACEHOLDER_IMAGE; }}
+                    />
+                </div>
+                <div className="project-info">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    <div className="project-technologies">
+                        {project.technologies.map((tech) => (
+                            <span key={tech} className="tech-tag">{tech}</span>
+                        ))}
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-});
-
-// --- Main Component ---
-const Projects = () => {
-  const sectionRef = useRef(null);
-  const projects = useMemo(() => projectData, []);
-
-  // Animate timeline items on scroll into view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
+        </motion.div>
     );
+};
 
-    const timelineItems = sectionRef.current?.querySelectorAll('.timeline-item');
-    timelineItems?.forEach(item => observer.observe(item));
-
-    return () => {
-        timelineItems?.forEach(item => observer.unobserve(item));
-    };
-  }, []);
-
-  // OPTIMIZED: Handle scroll without causing React re-renders
-  const handleScroll = useCallback(throttle(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const rect = section.getBoundingClientRect();
-    const scrollY = window.scrollY;
-    const ratio = Math.max(0, Math.min(1, (scrollY - section.offsetTop + window.innerHeight * 0.5) / rect.height));
-    
-    // Directly update CSS custom property on the DOM element
-    section.style.setProperty('--scroll-ratio', ratio);
-  }, 16), []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      handleScroll.cancel();
-    };
-  }, [handleScroll]);
-
+// --- Main Projects Component ---
+const Projects = () => {
   return (
-    <section 
-      id="projects" 
-      className="projects" 
-      ref={sectionRef} 
-    >
-      <OptimizedBackground />
-      
+    <section id="projects" className="projects-section">
+      <BubblesBackground />
       <div className="container">
-        <h2 className="section-title">Our Projects</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          Our Projects
+        </motion.h2>
         <div className="timeline">
-          {projects.map((project, index) => (
-            <ProjectItem key={project.id} project={project} index={index} />
+          {projectData.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
