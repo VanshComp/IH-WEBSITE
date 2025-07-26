@@ -73,7 +73,7 @@ const Events = () => {
             toggleActions: "play none none none",
           },
           onUpdate: () => {
-            el.innerText = Math.floor(el.innerText);
+            el.innerText = Math.floor(el.innerText) + "+";
           },
         }
       );
@@ -155,15 +155,15 @@ const Events = () => {
       <section className="mt-8 w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center">
         {EventsCategory.map((category, idx) => (
           <div key={idx} className="flex flex-col items-center justify-center">
-            <h3 className="text-xl font-bold mb-2">{category.name}</h3>
             <div
               ref={(el) => {
                 if (el) countRefs.current[idx] = el;
               }}
               className="text-4xl sm:text-5xl font-extrabold text-blue-700 transition-all mt-2"
             >
-              0
+              0+
             </div>
+            <h3 className="text-xl font-bold mb-2">{category.name}</h3>
           </div>
         ))}
       </section>

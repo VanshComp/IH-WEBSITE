@@ -70,7 +70,7 @@ const Startups = () => {
           </p>
         </div>
 
-        <div className="w-40 h-40 sm:w-60 sm:h-60 rotate-45 overflow-hidden">
+        <div className="w-40 h-40 sm:w-60 sm:h-60 rotate-45 overflow-hidden ">
           <img
             src="/arrow-down.png"
             alt=""
@@ -83,7 +83,7 @@ const Startups = () => {
         {cards.map(({ id, href, imgSrc, title, description, readMoreHref }) => (
           <div
             key={id}
-            className="max-w-sm flex flex-col bg-white border border-gray-200 rounded-lg dark:bg-white text-black shadow-sm"
+            className="max-w-sm flex flex-col bg-white border border-gray-200 rounded-lg dark:bg-white text-black shadow-2xl"
           >
             <a href={href}>
               <img
