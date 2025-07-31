@@ -1,5 +1,3 @@
-
-
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -11,21 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 const Events = () => {
   const EVENTS = [
     {
-      src: "/670426ca884c8e002ad8f442_img-placeholder.svg",
-      timeline: "July 26, 2025 | 10:00 AM - 5:00 PM",
-      Event: "Event",
+      src: "/RTEP.jpg",
+      timeline: "09/02/2024 – 10/02/2024",
+      title: "RTEP",
       Location: "Innovation Hub, Main Auditorium",
     },
     {
-      src: "/670426ca884c8e002ad8f442_img-placeholder.svg",
-      timeline: "July 26, 2025 | 10:00 AM - 5:00 PM",
-      Event: "Event",
+      src: "/hmit.jpg",
+      timeline: "19/03/2024 – 21/03/2024",
+      title: "HackMITWPU",
       Location: "Innovation Hub, Main Auditorium",
     },
     {
-      src: "/670426ca884c8e002ad8f442_img-placeholder.svg",
-      timeline: "July 26, 2025 | 10:00 AM - 5:00 PM",
-      Event: "Event",
+      src: "/ince.jpg",
+      timeline: " 05/05/2024",
+      title: "Inception",
       Location: "Innovation Hub, Main Auditorium",
     },
   ];
@@ -69,12 +67,12 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="p-6 sm:p-8 w-full mx-auto flex flex-col items-center gap-12 min-h-screen overflow-x-hidden">
-
+    <div className="p-6 sm:p-8 w-full mx-auto flex flex-col items-center gap-12 min-h-screen overflow-x-hidden bg-gradient-to-br from-blue-50 to-yellow-50">
+      {/* Header Section */}
       <section className="mb-6 flex flex-col text-black justify-center items-center text-center max-w-3xl gap-8 px-4">
         <h2 className="text-4xl sm:text-6xl font-bold mb-1 leading-tight tracking-tighter w-full">
-          Events{" "}
-          <span
+          Meet Our Events{" "}
+          {/* <span
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
@@ -82,8 +80,8 @@ const Events = () => {
             }}
           >
             @
-          </span>{" "}
-          Innovation Hub
+          </span>{" "} */}
+          {/* Innovation Hub */}
         </h2>
         <p className="text-sm sm:text-base text-[#6d6d6d] w-full">
           Innovation Hub hosts diverse events to inspire creativity and
@@ -93,10 +91,12 @@ const Events = () => {
         </p>
       </section>
 
+      {/* Divider */}
       <div className="w-11/12 h-[0.9px] bg-[#6d6d6d]" />
 
+      {/* Top Events Section */}
       <section className="flex flex-col md:flex-row w-full justify-around items-start md:items-center gap-10 md:gap-6 px-4 max-w-7xl ">
-    
+        {/* Description */}
         <div className="w-full md:w-1/3 flex flex-col gap-6">
           <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tighter">
             Top Events at Innovation Hub
@@ -132,7 +132,7 @@ const Events = () => {
           </div>
         </div>
 
-     
+        {/* Carousel Tabs */}
         <div className="flex-1 max-w-3xl w-full md:w-1/2 px-4">
           <CarouselTabs />
           <div className="mt-4 block md:hidden">
@@ -161,17 +161,18 @@ const Events = () => {
         </div>
       </section>
 
-   
+      {/* Divider */}
       <div className="w-11/12 h-[0.9px] bg-[#6d6d6d]" />
 
+      {/* Carousel Section */}
       <section className="w-full flex justify-center items-center max-w-7xl px-4">
         <Carousel />
       </section>
 
-
+      {/* Divider */}
       <div className="w-11/12 h-[0.9px] bg-[#6d6d6d]" />
 
-
+      {/* Events Cards Section */}
       <section className="mb-6 w-full flex flex-wrap gap-6 justify-center max-w-7xl px-4">
         {EVENTS.map((event, idx) => (
           <div
@@ -190,7 +191,7 @@ const Events = () => {
               <p className="text-sm text-gray-500">{event.timeline}</p>
               <a href="#">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                  {event.Event + " " + (idx + 1)}
+                  {event.title}
                 </h5>
               </a>
               <p className="text-gray-700 mb-4">{event.Location}</p>
@@ -222,11 +223,11 @@ const Events = () => {
         ))}
       </section>
 
-  
+      {/* Divider */}
       <div className="w-11/12 h-[0.9px] bg-[#6d6d6d]" />
 
-
-      <section className="mt-8 w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 gap-6 text-center px-4">
+      {/* Events Category with Counts */}
+      <section className="mt-8 w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 2xl:grid-cols-6 gap-6 text-center px-4">
         {EventsCategory.map((category, idx) => (
           <div key={idx} className="flex flex-col items-center justify-center">
             <div

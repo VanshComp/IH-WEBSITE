@@ -1,5 +1,3 @@
-
-
 import { useState, useRef } from "react";
 
 const StartYourProjectSection = () => {
@@ -45,21 +43,26 @@ const StartYourProjectSection = () => {
   };
 
   return (
-    <section className="mb-8 text-black p-6 rounded w-full mx-auto mt-5 flex flex-col md:flex-row justify-between items-center h-auto md:h-96 gap-8">
+    <section
+      className="mb-8 text-black p-6 rounded w-full mx-auto mt-5 flex flex-col justify-between items-center h-auto"
+    >
       {/* Left side header */}
-      <div className="w-full md:w-1/3 flex flex-col gap-3 justify-center items-center px-2">
-        <h2 className="text-5xl sm:text-7xl md:text-9xl font-bold mb-6 tracking-tighter text-center">
+      <div className="w-full flex flex-col gap-3 justify-center items-center px-2">
+        <h2 className="text-6xl font-bold mb-6 tracking-tighter text-center">
           Start{" "}
           <span
-            className="text-yellow-400"
+            className=""
             style={{
               fontStyle: "italic",
+              color: "var(--color-yellow)",
             }}
           >
             Project
           </span>
         </h2>
       </div>
+
+    
 
       <div className="w-full md:w-1/2  flex flex-col md:flex-row gap-8">
         {/* Left side: Drag & Drop Upload */}
@@ -149,7 +152,7 @@ const StartYourProjectSection = () => {
             <svg
               className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
               aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"  
+              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 14 10"
             >

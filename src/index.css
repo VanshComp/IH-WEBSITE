@@ -4,8 +4,8 @@
   :root {
     --color-black: #111112;
     --color-white: #ffffff;
-    --color-yellow: #fff279;
-    --color-blue: #6999ff;
+    --color-yellow: #eec759;
+    --color-blue: #009cf7ff;
     --color-blue-light: #93bcff;
   }
 }
@@ -19,9 +19,12 @@
 
 * {
   outline: none;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Segoe UI", sans-serif;
+
   font-weight: 500;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 .i {

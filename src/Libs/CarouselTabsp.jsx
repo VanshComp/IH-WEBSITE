@@ -1,33 +1,31 @@
-
-
 import React, { useState, useEffect, useRef } from "react";
 
 const tabs = [
   {
     id: 1,
     href: "#",
-    imgSrc: "/ride.jpg",
-    title: "RIDE - Research, Innovation & Entrepreneurship",
+    imgSrc: "/ins.png",
+    title: "Insudox",
     description:
-      "A dynamic event focusing on experiential learning, sustainability, and innovation with 500 participants, industry leaders, and practical workshops.",
+      "Online insurance filing, tracking and claiming software which would allow for people to avail assistance while going through tedious procedures of company-based policy reimbursements.",
     readMoreHref: "#",
   },
   {
     id: 2,
     href: "#",
-    imgSrc: "/sih.jpg",
-    title: "Smart India Hackathon 2023",
+    imgSrc: "/handsani.jpg",
+    title: " AUTOMATIC HAND SANITIZATION",
     description:
-      "A platform fostering innovation and problem-solving with over 600+ students, showcasing teamwork and creative solutions.",
+      "Hand sanitization Module that senses the hand and dispenses sanitizer automatically while also reading the user's temperature and checking if it is a safe value.",
     readMoreHref: "#",
   },
   {
     id: 3,
     href: "#",
-    imgSrc: "/nasa.jpg",
-    title: "NASA Space Apps Challenge",
+    imgSrc: "/powe.png",
+    title: " POWER LIFTING FIXTURE DESIGN",
     description:
-      "An inspiring program connecting 573 participants across universities, solving real-world space and Earth problems using NASA’s open data.",
+      "A fixture which is designed to lift heavy components weighing up to 50 tonnes and move them by any required angle from 0 - 90 degrees.",
     readMoreHref: "#",
   },
 ];
@@ -77,7 +75,7 @@ const CarouselTabs = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl py-8 flex flex-col justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 min-h-screen overflow-hidden">
+    <div className="w-full max-w-6xl py-8 flex flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8 min-h-fit overflow-hidden">
       <div className="relative w-full">
         {tabs.map((tab, idx) => (
           <div
@@ -102,7 +100,7 @@ const CarouselTabs = () => {
 
       {/* Tabs */}
       <div
-        className="flex border-b border-gray-200 mt-6 relative w-full overflow-x-clip"
+        className="flex border-b border-gray-200 mt-6 relative w-full overflow-x-clip justify-center items-center md:flex-row flex-col"
         role="tablist"
       >
         {tabs.map((tab, idx) => (

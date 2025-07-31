@@ -1,23 +1,34 @@
+
+
 import React, { useState } from "react";
 
 const DUMMY_DATA = [
   {
-    id: 1,
-    title: "Team Collab",
-    desc: "Join the best minds for breakthrough projects.",
-    img: "/670426ca884c8e002ad8f442_img-placeholder.svg",
+    id: 4,
+    href: "#",
+    imgSrc: "/neuro.jpg",
+    title: "Neuro Harmony Program",
+    description:
+      "A 2.5-day scientific program on neuro-rehabilitation and neuropalliative care involving interdisciplinary workshops and expert sessions.",
+    readMoreHref: "#",
   },
   {
-    id: 2,
-    title: "Startup Expo",
-    desc: "Showcase your business ideas to investors.",
-    img: "/670426ca884c8e002ad8f442_img-placeholder.svg",
+    id: 5,
+    href: "#",
+    imgSrc: "/nak.jpg",
+    title: "Nakshatra Event",
+    description:
+      "Celebrates 578 children showcasing creativity from over 45 orphanages through dance, drama and competitions, promoting education and community spirit.",
+    readMoreHref: "#",
   },
   {
-    id: 3,
-    title: "Hackathon",
-    desc: "Solve real-world challenges with code.",
-    img: "/670426ca884c8e002ad8f442_img-placeholder.svg",
+    id: 6,
+    href: "#",
+    imgSrc: "/esummit.png",
+    title: "E-Summit 2024",
+    description:
+      "Entrepreneurial workshops, panel discussions, and networking opportunities for 700+ students, empowering budding innovators and founders.",
+    readMoreHref: "#",
   },
 ];
 
@@ -39,103 +50,97 @@ const Carousel = () => {
   return (
     <div
       id="default-carousel"
-      className="relative w-11/12 flex flex-col items-center justify-center mx-auto"
+      className="relative w-11/12 max-w-5xl mx-auto flex flex-col items-center justify-center"
       data-carousel="slide"
     >
       <div className="relative w-full overflow-hidden rounded-lg">
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div className="relative h-48 sm:h-64 md:h-80 lg:h-[30rem] overflow-hidden rounded-lg">
           {DUMMY_DATA.map((item, index) => (
             <div
               key={item.id}
-              className={`duration-700 ease-in-out absolute top-0 left-0 w-full h-full ${
-                index === activeIndex ? "block" : "hidden"
+              className={`duration-700 ease-in-out absolute top-0 left-0 w-full h-full transition-opacity ${
+                index === activeIndex
+                  ? "opacity-100 z-10"
+                  : "opacity-0 z-0 pointer-events-none"
               }`}
               data-carousel-item
+              aria-hidden={index !== activeIndex}
             >
-              <img
-                src={item.img}
-                className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt={item.title}
-              />
-              <div className="absolute bottom-5 left-5 bg-opacity-50 p-3 rounded text-white">
-                <h3 className="font-bold text-xs md:text-lg">{item.title}</h3>
-                <p className="text-[.5rem] md:text-sm">{item.desc}</p>
-              </div>
+              {/* Clickable area */}
+              <a href={item.href} className="block w-full h-full relative">
+                <img
+                  src={item.imgSrc}
+                  alt={item.title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                {/* Overlay with title and description */}
+                <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 p-4 rounded-md text-white max-w-xl">
+                  <h3 className="font-bold text-sm sm:text-lg">{item.title}</h3>
+                  <p className="text-xs sm:text-sm mt-1">{item.description}</p>
+                </div>
+              </a>
             </div>
           ))}
         </div>
-
-        {/* Indicators */}
-        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-          {DUMMY_DATA.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-                activeIndex === index ? "bg-white" : "bg-gray-500"
-              }`}
-              aria-current={activeIndex === index ? "true" : "false"}
-              aria-label={`Slide ${index + 1}`}
-              data-carousel-slide-to={index}
-              onClick={() => goToSlide(index)}
-            ></button>
-          ))}
-        </div>
-
-        {/* Prev Button */}
-        <button
-          type="button"
-          className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-prev
-          onClick={handlePrev}
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-            <svg
-              className="w-4 h-4 text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 1 1 5l4 4"
-              />
-            </svg>
-            <span className="sr-only">Previous</span>
-          </span>
-        </button>
-
-        {/* Next Button */}
-        <button
-          type="button"
-          className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-next
-          onClick={handleNext}
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-            <svg
-              className="w-4 h-4 text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 9 4-4-4-4"
-              />
-            </svg>
-            <span className="sr-only">Next</span>
-          </span>
-        </button>
       </div>
+
+      {/* Indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        {DUMMY_DATA.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+              activeIndex === index ? "bg-white" : "bg-gray-500"
+            }`}
+            aria-current={activeIndex === index ? "true" : "false"}
+            aria-label={`Slide ${index + 1}`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+      </div>
+
+      {/* Prev Button */}
+      <button
+        type="button"
+        onClick={handlePrev}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-white bg-opacity-30 hover:bg-opacity-50 focus:outline-none"
+        aria-label="Previous Slide"
+      >
+        <svg
+          className="w-5 h-5 text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 1L1 5l4 4" />
+        </svg>
+      </button>
+
+      {/* Next Button */}
+      <button
+        type="button"
+        onClick={handleNext}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-white bg-opacity-30 hover:bg-opacity-50 focus:outline-none"
+        aria-label="Next Slide"
+      >
+        <svg
+          className="w-5 h-5 text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M1 9l4-4-4-4" />
+        </svg>
+      </button>
     </div>
   );
 };
