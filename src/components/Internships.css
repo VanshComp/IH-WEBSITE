@@ -167,9 +167,9 @@
 
 .apply-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15); /* Updated shadow */
-  background: #F7E3AC; /* Light yellow background */
-  color: var(--dark-gray); /* Dark text for contrast */
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+  background: #F7E3AC;
+  color: var(--dark-gray);
 }
 
 .benefits-section {
@@ -259,9 +259,136 @@
 
 .cta-section .btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2); /* Updated shadow */
-  background: #F7E3AC; /* Light yellow background */
-  color: var(--dark-gray); /* Dark text for contrast */
+  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);
+  background: #F7E3AC;
+  color: var(--dark-gray);
+}
+
+/* --- NEW: Application Form Modal Styles --- */
+.form-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.form-modal {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--dark-gray);
+    transform: rotate(90deg);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+.form-header p {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 156, 247, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, var(--primary-blue), #0077c7);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 156, 247, 0.3);
 }
 
 @media (max-width: 768px) {
