@@ -1,34 +1,3 @@
-@import "tailwindcss";
-
-@layer base {
-  :root {
-    --color-black: #111112;
-    --color-white: #ffffff;
-    --color-yellow: #eec759;
-    --color-blue: #009cf7ff;
-    --color-blue-light: #93bcff;
-  }
-}
-@theme {
-  --color-black: var(--color-black);
-  --color-white: var(--color-white);
-  --color-yellow: var(--color-yellow);
-  --color-blue: var(--color-blue);
-  --color-blue-light: var(--color-blue-light);
-}
-
-* {
-  outline: none;
-  /* font-family: "Poppins", sans-serif; */
-  font-family: "Segoe UI", sans-serif;
-
-  font-weight: 500;
-  font-style: normal;
-  scroll-behavior: smooth;
-}
-
-.i {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
