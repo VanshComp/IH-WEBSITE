@@ -178,7 +178,7 @@ const Contact = () => {
             </div>
 
             {/* Campus Map */}
-            <motion.div
+            {/* <motion.div
               className="mt-8 bg-white/10 backdrop-blur-sm rounded-lg p-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -189,7 +189,7 @@ const Contact = () => {
               <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
                 <p className="text-gray-400">Interactive Map Coming Soon</p>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Contact Form */}

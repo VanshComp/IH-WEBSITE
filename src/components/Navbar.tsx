@@ -53,10 +53,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-gradient-to-r from-yellow-400 to-blue-500 p-2 rounded-lg">
-                <Zap className="h-6 w-6 text-white" />
+              <div className="p-2 rounded-lg h-14 w-24">
+                {/* <Zap className="h-6 w-6 text-white" /> */}
+                <img src="/IH.png" className="h-full w-full object-cover" alt="" />
               </div>
-              <span className="text-xl font-bold text-gray-800">Innovation Hub</span>
+              {/* <span className="text-xl font-bold text-gray-800">Innovation Hub</span> */}
             </Link>
           </motion.div>
 

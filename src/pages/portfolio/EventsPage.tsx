@@ -154,7 +154,7 @@ const EventsPage = () => {
         <motion.div className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-purple-600">Events</span>
+            Our <span className="text-blue-600">Events</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Join our exciting events, workshops, and competitions to learn, network, and grow
@@ -174,7 +174,7 @@ const EventsPage = () => {
                 placeholder="Search events..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               />
             </div>
             <div className="flex items-center space-x-2">
@@ -186,7 +186,7 @@ const EventsPage = () => {
                     onClick={() => setActiveFilter(category.id)}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                       activeFilter === category.id
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-white text-gray-700 hover:bg-gray-100'
                     }`}
                   >
@@ -251,7 +251,7 @@ const EventsPage = () => {
                     {event.readMoreHref ? (
                       <a
                         href={event.readMoreHref}
-                        className="flex-1 bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 text-sm font-medium flex items-center justify-center"
+                        className="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm font-medium flex items-center justify-center"
                       >
                         Read More <ExternalLink className="ml-2 w-4 h-4" />
                       </a>
@@ -320,7 +320,7 @@ const EventsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-[#EEC759] rounded-2xl p-8 text-white">
             <Calendar className="h-16 w-16 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Want to Organize an Event?</h3>
             <p className="text-lg mb-6 opacity-90">
@@ -372,7 +372,7 @@ const EventsPage = () => {
                       </div>
                       <button
                         type="submit"
-                        className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600"
                       >
                         Submit
                       </button>
@@ -388,7 +388,7 @@ const EventsPage = () => {
                       <li>Contact the Innovation Hub for additional support.</li>
                     </ul>
                     <button
-                      className="mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600"
                       onClick={() => setCtaModal(null)}
                     >
                       Close

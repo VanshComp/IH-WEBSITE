@@ -13,7 +13,7 @@ const projects = [
       "A bi-functional (voice and text) interface that tackles redundant FAQs for the exam department by accepting and answering queries in three languages using text or audio inputs.",
   },
   {
-    src: "/div.png",
+    src: "/div.png",  
     timeline: "Ongoing",
     Event: "DIVYANGJAN SUPPORT",
     Location:

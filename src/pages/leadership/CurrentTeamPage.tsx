@@ -30,15 +30,15 @@ const teamData: TeamDepartment[] = [
   {
     department: "Company Relations Department",
     members: [
-      { name: "Janvi Bajpayee", position: "Company Relations Head", image: "/images/janvi.jpg" },
-      { name: "Alroy Lopez", position: "Company Relations Committee Member", image: "/images/alroy.jpg" },
+      { name: "Janvi Bajpayee", position: "Company Relations Head", image: "/janvib.jpg" },
+      { name: "Alroy Lopez", position: "Company Relations Committee Member", image: "/alroy.jpg" },
     ],
   },
   {
     department: "Technical Department",
     members: [
       { name: "Abhir Bengali", position: "Technical Head", image: "/Abhir Bengali.jpg" },
-      { name: "Zaara Hirani", position: "Project Manager", image: "/images/zaara.jpg" },
+      { name: "Zaara Hirani", position: "Project Manager", image: "/zaara.jpg" },
       { name: "Aaradhya Banginwar", position: "Software Head", image: "/Aaradhya Banginwar.png" },
     ],
   },
@@ -60,7 +60,7 @@ const teamData: TeamDepartment[] = [
     members: [
       { name: "Niyati Mahawar", position: "Marketing Committee Member", image: "/Niyati Mahavar.jpg" },
       { name: "Divya Tiwari", position: "Marketing Committee Member", image: "/images/divya.jpg" },
-      { name: "Lakshya Maheshwari", position: "Marketing Committee Member", image: "/images/lakshya.jpg" },
+      { name: "Lakshya Maheshwari", position: "Marketing Committee Member", image: "/lak.jpg" },
     ],
   },
   {
