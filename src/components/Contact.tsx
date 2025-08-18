@@ -118,7 +118,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-6xl font-bold mb-4">
             Get In <span className="text-yellow-400">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
