@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
     --primary-blue: #009cf7;
     --secondary-yellow: #EEC759;
@@ -13,7 +15,8 @@
 .internships {
   background: var(--white);
   position: relative;
-  padding: 100px 0;
+  padding: 100px 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .internships::before {
@@ -32,6 +35,8 @@
 .internships .container {
     position: relative;
     z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-header {
@@ -39,14 +44,23 @@
   margin-bottom: 4rem;
 }
 
-.section-header .section-title { color: var(--dark-gray); }
-.section-header .section-subtitle { color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+.section-header .section-title { 
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--dark-gray); 
+    margin-bottom: 1rem;
+}
+.section-header .section-subtitle { 
+    color: var(--text-muted); 
+    max-width: 650px; 
+    margin: 0 auto; 
+    line-height: 1.6;
+}
 
 .internships-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
-  margin-bottom: 6rem;
 }
 
 .internship-card {
@@ -56,6 +70,9 @@
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
   border: 1px solid var(--border-light);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .internship-card:hover {
@@ -107,6 +124,7 @@
   margin-bottom: 1.5rem;
   border-left: 3px solid var(--border-light);
   padding-left: 1rem;
+  flex-grow: 1;
 }
 
 .skills-section h4 {
@@ -140,6 +158,7 @@
   align-items: center;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-light);
+  margin-top: auto;
 }
 
 .spots-info {
@@ -172,99 +191,8 @@
   color: var(--dark-gray);
 }
 
-.benefits-section {
-  margin-bottom: 4rem;
-  text-align: center;
-}
 
-.benefits-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: var(--dark-gray);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.benefit-item {
-  padding: 2rem;
-  border-radius: 15px;
-  background: var(--light-gray);
-  border: 1px solid var(--border-light);
-  transition: all 0.3s ease;
-}
-
-.benefit-item:hover {
-    transform: translateY(-5px);
-    background: var(--white);
-}
-
-.benefit-icon {
-  width: 48px;
-  height: 48px;
-  color: var(--white);
-  margin: 0 auto 1.5rem;
-  background: var(--primary-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefit-item h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: var(--dark-gray);
-}
-
-.benefit-item p {
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.cta-section {
-  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-yellow));
-  border-radius: 20px;
-  padding: 4rem;
-  text-align: center;
-  color: var(--white);
-}
-
-.cta-content h3 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.cta-content p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-section .btn {
-  background: var(--white);
-  color: var(--primary-blue);
-  padding: 1rem 2rem;
-  font-size: 1rem;
-}
-
-.cta-section .btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);
-  background: #F7E3AC;
-  color: var(--dark-gray);
-}
-
-/* --- NEW: Application Form Modal Styles --- */
+/* --- Application Form Modal Styles --- */
 .form-modal-overlay {
     position: fixed;
     top: 0;
@@ -302,10 +230,16 @@
     cursor: pointer;
     color: var(--text-muted);
     transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-btn:hover {
     color: var(--dark-gray);
+    background-color: var(--light-gray);
     transform: rotate(90deg);
 }
 
@@ -354,6 +288,7 @@
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -392,7 +327,7 @@
 }
 
 @media (max-width: 768px) {
-  .internships-grid, .benefits-grid {
+  .internships-grid {
     grid-template-columns: 1fr;
   }
 }
