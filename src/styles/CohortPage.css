@@ -1,108 +1,155 @@
+/* --- Layout --- */
 .cohort-page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    min-height: 100vh;
-    overflow-x: hidden;
+  font-family: sans-serif;
+  background: #fdfdfd;
+  color: #222;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #009cf7, #0056d6);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.cta-button {
+  background: #eec759;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: #ffd973;
+}
+.hero-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: white;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* Cohort Section */
+.cohort-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.cohort-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #009cf7;
+  margin-bottom: 3rem;
+}
+.cohorts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Cohort Cards */
+.cohort-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+.cohort-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 156, 247, 0.15);
+}
+.card-content {
+  padding: 2rem;
+  flex: 2;
+}
+.card-content h3 {
+  color: #009cf7;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.card-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #eec759;
+}
+.card-content p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.card-gif {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.card-gif img {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .cohort-card {
+    flex-direction: column;
   }
-  
-  .hero-section {
-    background: #009cf7;
-    color: white;
-    padding: 5rem 2rem;
-    position: relative;
-    overflow: hidden;
+  .card-gif {
+    padding: 1rem 2rem;
   }
-  
-  .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  
-  .hero-content p {
-    font-size: 1.5rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-accent {
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: #EEC759;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  .cohort-section {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-  }
-  
-  .cohort-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #009cf7;
-    margin-bottom: 3rem;
-  }
-  
-  .cohort-footer {
-    background: #009cf7;
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-top: 4rem;
-  }
-  
-  .cohort-footer p {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Button Styles */
-  .cta-button {
-    background: #EEC759;
-    color: #333;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(238, 199, 89, 0.3);
-  }
-  
-  .cta-button:hover {
-    background: #ffd86e;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(238, 199, 89, 0.4);
-  }
-  
-  @media (max-width: 768px) {
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-content p {
-      font-size: 1.2rem;
-    }
-    
-    .cohort-section h2 {
-      font-size: 2rem;
-    }
-    
-    .cohort-footer p {
-      font-size: 1.4rem;
-    }
-  }
+}
+
+/* Footer */
+.cohort-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f5f5f5;
+  margin-top: 3rem;
+}
+.cohort-footer p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* --- Animations --- */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.visible {
+  opacity: 1 !important;
+}
+.fade-in {
+  transform: translateY(20px);
+}
+.fade-in.visible {
+  transform: translateY(0);
+}
+.fade-in-up {
+  transform: translateY(40px);
+}
+.fade-in-up.visible {
+  transform: translateY(0);
+}

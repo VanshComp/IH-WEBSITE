@@ -1,5 +1,5 @@
 import React from 'react';
-import Cohort from './pages/BootcampsPage';
+import Cohort from './pages/ContactUs';
 
 function App() {
   return (
