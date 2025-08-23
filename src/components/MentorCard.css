@@ -1,0 +1,5 @@
+/* src/components/MentorCard.css */
+/* This file can contain styles specific ONLY to MentorCard, if any. */
+.mentor-card-container {
+  text-align: left;
+}
