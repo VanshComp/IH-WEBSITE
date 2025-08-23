@@ -25,7 +25,7 @@ const HomePage = () => (
     <Portfolio />
     <Ecosystem />
     <Leadership />
-    <Cohorts />
+    {/* <Cohorts /> */}
     <Contact />
   </>
 );
