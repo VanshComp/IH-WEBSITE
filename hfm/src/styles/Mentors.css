@@ -1,0 +1,74 @@
+/* Define color variables based on user input */
+:root {
+  --custom-blue: #009cf7;
+  --custom-yellow: #EEC759;
+  --custom-white: #ffffff;
+  --dark-background: #061b45; /* A very dark blue for contrast */
+}
+
+.mentors-page {
+  background-color: #f4f7f9;
+}
+
+.mentors-hero {
+  background-color: var(--dark-background);
+  color: var(--custom-white);
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  filter: blur(2px);
+}
+
+.mentors-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInHeroText 2s ease-in-out forwards;
+}
+
+@keyframes fadeInHeroText {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mentors-hero .hero-title {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--custom-white);
+  text-shadow: 0 0 15px rgba(238, 199, 89, 0.4); /* Yellow glow */
+}
+
+.mentors-hero .hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  max-width: 600px;
+  margin: 1rem auto 0;
+  opacity: 0.9;
+}
+
+.mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Content Section Styles (Unchanged) --- */
+.mentors-content { padding: 5rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px 20px; }
+.section-header { text-align: center; margin-top: 3rem; margin-bottom: 3rem; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.section-header.visible { opacity: 1; transform: translateY(0); }
+.mentors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.mentor-card-wrapper { opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.mentor-card-wrapper.visible { opacity: 1; transform: translateY(0); }

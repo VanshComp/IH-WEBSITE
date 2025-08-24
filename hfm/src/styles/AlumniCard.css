@@ -1,0 +1,5 @@
+/* src/components/AlumniCard.css */
+/* Specific overrides for AlumniCard can go here. */
+.alumni-card-container {
+  text-align: left;
+}
