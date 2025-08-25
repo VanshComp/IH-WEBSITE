@@ -33,7 +33,7 @@ const teamData: TeamDepartment[] = [
   {
     department: "Company Relations Department",
     members: [
-      { name: "Janvi Bajpayee", position: "Company Relations Head", image: "/janvib.jpg" },
+      { name: "Janvi Bajpayi", position: "Company Relations Head", image: "/janvib.jpg" },
       { name: "Alroy Lopez", position: "Company Relations Committee Member", image: "/alroy.jpg" },
     ],
   },
